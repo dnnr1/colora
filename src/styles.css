@@ -1,5 +1,18 @@
+@import 'tailwindcss';
 
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  font-family: 'Lobster Two', sans-serif;
+}
+
+.font-henny {
+  font-family: 'Henny Penny', cursive;
+}
+
+.font-lobster {
+  font-family: 'Lobster Two', cursive;
+}
 
 * {
   box-sizing: border-box;
@@ -15,3 +28,6 @@ body {
   margin: 0;
 }
 
+@theme {
+  --color-simple-purple: #545dbb;
+}

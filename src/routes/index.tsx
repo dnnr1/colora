@@ -1,14 +1,27 @@
+import Button from '#/components/Button'
+import ColorGenerator from '#/components/ColorGenerator'
+import type { ColorGeneratorHandle } from '#/components/ColorGenerator/ColorGenerator'
+import Header from '#/components/Header'
 import { createFileRoute } from '@tanstack/react-router'
+import { useRef } from 'react'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
+  const generatorRef = useRef<ColorGeneratorHandle>(null)
   return (
-    <div className="p-8">
-      <h1 className="text-4xl font-bold">Welcome to TanStack Start</h1>
-      <p className="mt-4 text-lg">
-        Edit <code>src/routes/index.tsx</code> to get started.
-      </p>
-    </div>
+    <>
+      <Header />
+      <div className="flex h-screen justify-center mt-20">
+        <div className="flex flex-col items-center gap-2">
+          <h1 className="text-2xl mb-2">Create Color Palettes</h1>
+          <Button
+            text="Generate"
+            onClick={() => generatorRef.current?.generate()}
+          />
+          <ColorGenerator ref={generatorRef} />
+        </div>
+      </div>
+    </>
   )
 }
