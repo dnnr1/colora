@@ -8,7 +8,7 @@ export default function Header() {
         <Link
           to="/"
           aria-label="Colora home"
-          className="rounded-sm text-[15px] font-semibold tracking-[-0.01em]"
+          className="rounded-sm text-[25px] font-semibold tracking-[-0.01em]"
         >
           Colora
         </Link>
