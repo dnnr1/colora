@@ -19,7 +19,7 @@ export default function ThemeSwitch() {
       onClick={toggleTheme}
       aria-label={`Switch to ${nextTheme} theme`}
       title={`Switch to ${nextTheme} theme`}
-      className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-line text-muted transition-colors hover:border-ink/30 hover:text-ink"
+      className="cursor-pointer inline-flex h-8 w-8 items-center justify-center rounded-md border border-line text-muted transition-colors hover:border-ink/30 hover:text-ink"
     >
       {theme === 'dark' ? (
         <Sun size={16} strokeWidth={1.5} aria-hidden="true" />
