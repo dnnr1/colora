@@ -1,17 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400..600&display=swap');
 @import 'tailwindcss';
 
-@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@theme {
+  --font-sans: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+}
 
 :root {
-  font-family: 'Lobster Two', sans-serif;
+  --page: #111110;
+  --surface: #191917;
+  --line: #2b2b26;
+  --ink: #f3f0e8;
+  --muted: #96938a;
+  color-scheme: dark;
 }
 
-.font-henny {
-  font-family: 'Henny Penny', cursive;
-}
-
-.font-lobster {
-  font-family: 'Lobster Two', cursive;
+:root[data-theme='light'] {
+  --page: #f5f2ea;
+  --surface: #fbf9f3;
+  --line: #ded9cc;
+  --ink: #1a1a16;
+  --muted: #6b675d;
+  color-scheme: light;
 }
 
 * {
@@ -26,8 +44,23 @@ body,
 
 body {
   margin: 0;
+  background-color: var(--page);
+  color: var(--ink);
+  font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
-@theme {
-  --color-simple-purple: #545dbb;
+::selection {
+  background-color: var(--ink);
+  color: var(--page);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }

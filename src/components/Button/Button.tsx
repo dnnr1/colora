@@ -6,8 +6,9 @@ type ButtonProps = {
 export default function Button({ text = 'Click on me', onClick }: ButtonProps) {
   return (
     <button
+      type="button"
       onClick={onClick}
-      className="w-fit rounded-4xl bg-simple-purple px-4 py-2 text-white text-2xl"
+      className="inline-flex h-10 items-center justify-center rounded-md bg-ink px-4 text-sm font-medium text-page transition-opacity hover:opacity-85 active:opacity-75"
     >
       {text}
     </button>

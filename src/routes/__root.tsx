@@ -15,7 +15,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Colora — palette generator',
+      },
+      {
+        name: 'description',
+        content:
+          'Generate a five-color palette in one press. Click any swatch to copy its hex value.',
       },
     ],
     links: [

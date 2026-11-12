@@ -1,27 +1,34 @@
-import Button from '#/components/Button'
 import ColorGenerator from '#/components/ColorGenerator'
-import type { ColorGeneratorHandle } from '#/components/ColorGenerator/ColorGenerator'
 import Header from '#/components/Header'
 import { createFileRoute } from '@tanstack/react-router'
-import { useRef } from 'react'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
-  const generatorRef = useRef<ColorGeneratorHandle>(null)
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <div className="flex h-screen justify-center mt-20">
-        <div className="flex flex-col items-center gap-2">
-          <h1 className="text-2xl mb-2">Create Color Palettes</h1>
-          <Button
-            text="Generate"
-            onClick={() => generatorRef.current?.generate()}
-          />
-          <ColorGenerator ref={generatorRef} />
+
+      <main className="flex flex-1 items-center px-5 py-10 sm:px-8 sm:py-12">
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="max-w-2xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+              Palette generator
+            </p>
+            <h1 className="mt-4 text-[2.5rem] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-6xl">
+              Five colors,
+              <br className="hidden sm:block" /> one press.
+            </h1>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
+              A fresh palette every time. Click a swatch to copy its hex value.
+            </p>
+          </div>
+
+          <div className="mt-10 sm:mt-12">
+            <ColorGenerator />
+          </div>
         </div>
-      </div>
-    </>
+      </main>
+    </div>
   )
 }
